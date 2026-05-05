@@ -60,7 +60,7 @@ const BusinessCardHero = () => {
                 <div className="relative mb-8 inline-block">
                   <div className="w-32 h-32 lg:w-40 lg:h-40 bg-[#1a0b2e] rounded-full flex items-center justify-center relative overflow-hidden border-4 border-beast-accent-purple shadow-[0_0_20px_rgba(177,70,255,0.4)]">
                     <img 
-                      src="/monk.png" 
+                      src={`${import.meta.env.BASE_URL}monk.png`} 
                       alt="Navneet (Monk) Porwal" 
                       className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     />
@@ -165,7 +165,7 @@ const BusinessCardHero = () => {
                </div>
             </div>
 
-            {/* Bottom: QR Section */}
+            {/* Bottom: Left Section */}
             <div className="mt-12 lg:mt-0 flex justify-between items-end border-t border-gray-100 pt-10">
                <div className="flex items-center gap-4 group">
                   <div className="w-12 h-12 bg-beast-purple rounded-full flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
@@ -176,15 +176,6 @@ const BusinessCardHero = () => {
                     <div className="text-base font-bold">Brookfield, Wisconsin, USA</div>
                     <div className="text-xs font-bold text-beast-green uppercase">Driving Global Transformation</div>
                   </div>
-               </div>
-
-               <div className="flex flex-col items-center">
-                  <div className="w-24 h-24 p-2 bg-white border-2 border-beast-accent-purple rounded-2xl">
-                     <div className="w-full h-full bg-gray-100 rounded-lg flex items-center justify-center text-beast-purple">
-                        <QrCode size={40} />
-                     </div>
-                  </div>
-                  <span className="text-[9px] font-black uppercase tracking-widest mt-2 text-beast-purple uppercase italic">Connect with Navneet</span>
                </div>
             </div>
           </div>
