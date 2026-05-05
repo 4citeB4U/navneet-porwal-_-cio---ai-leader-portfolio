@@ -1,0 +1,69 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# 
+# REGION: CONFIG
+# TAG: CONFIG.GITHUB.DEPLOY.MAIN
+# DESCRIPTION: GitHub Actions workflow for building and deploying the portfolio to GitHub Pages
+# 
+# 5WH:
+# WHAT = deploy.yml
+# WHY = Automate the deployment of the portfolio to GitHub Pages
+# WHO = Leeway Innovations
+# WHERE = .github/workflows/deploy.yml
+# WHEN = 2026-05-05
+# HOW = GitHub Actions + Vite Build
+# 
+# AGENTS:
+# ASSESS
+# ALIGN
+# AUDIT
+# 
+# LICENSE: PROPRIETARY
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
