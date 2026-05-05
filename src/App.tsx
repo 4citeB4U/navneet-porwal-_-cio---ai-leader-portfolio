@@ -19,10 +19,18 @@ import {
   MapPin,
   GraduationCap,
   Brain,
-  QrCode
+  QrCode,
+  Workflow,
+  TrendingUp,
+  Layers,
+  Lightbulb,
+  Search,
+  Users2,
+  CheckCircle2,
+  ArrowRight
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 
 // --- Components ---
 
@@ -103,7 +111,7 @@ const BusinessCardHero = () => {
                       <span className="text-beast-yellow text-[9px] font-black uppercase tracking-[0.2em]">EDUCATE. INNOVATE. TRANSFORM.</span>
                    </div>
                    <p className="text-[10px] text-white font-black uppercase leading-tight text-center">
-                     Empowering the next generation of AI leaders.
+                     Beast AI Hero Academy is a global AI training and startup incubation system where participants build real-world AI tools, work in teams, and launch deployable products.
                    </p>
                 </div>
              </div>
@@ -183,6 +191,144 @@ const BusinessCardHero = () => {
           </div>
         </motion.div>
       </div>
+    </section>
+  );
+};
+
+const FlagshipProgram = () => {
+  const pillars = [
+    {
+      title: "Learn",
+      icon: <Brain className="text-beast-accent-purple" size={40} />,
+      items: ["AI Fundamentals (Azure, Google, Agents)", "Entrepreneurship", "Personal Mastery"],
+      color: "border-beast-accent-purple/30 bg-beast-accent-purple/5"
+    },
+    {
+      title: "Build",
+      icon: <Cpu className="text-beast-green" size={40} />,
+      items: ["AI Personal Assistants", "Smart Schedulers & Mini CRM", "Contract Analyzers", "Multi-Agent Systems"],
+      color: "border-beast-green/30 bg-beast-green/5"
+    },
+    {
+      title: "Launch",
+      icon: <Rocket className="text-beast-yellow" size={40} />,
+      items: ["Team-based Startup Projects", "Demo Day + Shark Tank Pitch", "Launching Real Companies"],
+      color: "border-beast-yellow/30 bg-beast-yellow/5"
+    }
+  ];
+
+  return (
+    <section id="flagship" className="py-32 bg-[#0d0516] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-24">
+          <h2 className="text-beast-green font-sans font-black text-xs uppercase tracking-[0.4em] mb-4">The Flagship Program</h2>
+          <h3 className="text-5xl lg:text-7xl font-sans font-black uppercase text-white mb-6">Global AI Internship & <br /><span className="text-beast-accent-purple italic underline">Startup Incubator</span></h3>
+          <p className="max-w-3xl mx-auto text-xl text-gray-400 font-bold leading-relaxed">
+            A one-of-a-kind international program combining AI training, real-world product development, and startup incubation across the United States and India.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-8">
+          {pillars.map((pillar, idx) => (
+            <motion.div
+              key={idx}
+              whileHover={{ y: -10 }}
+              className={`p-10 rounded-[40px] border ${pillar.color} backdrop-blur-sm relative overflow-hidden group`}
+            >
+              <div className="mb-8">{pillar.icon}</div>
+              <h4 className="text-4xl font-sans font-black text-white mb-8 uppercase italic">{pillar.title}</h4>
+              <ul className="space-y-4">
+                {pillar.items.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-gray-300 font-bold">
+                    <CheckCircle2 size={18} className="text-beast-green shrink-0 mt-1" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const ProgramStructure = () => {
+  const steps = [
+    { title: "Self Discovery", icon: <Search /> },
+    { title: "Team Formation", icon: <Users2 /> },
+    { title: "AI Bootcamp", icon: <Terminal /> },
+    { title: "Build Real Tools", icon: <Cpu /> },
+    { title: "MVP Development", icon: <Layers /> },
+    { title: "Demo Day", icon: <TrendingUp /> },
+    { title: "Startup Launch", icon: <Rocket /> }
+  ];
+
+  return (
+    <section className="py-32 bg-[#12071f] border-y border-white/5 overflow-x-auto">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-20">
+           <h2 className="text-beast-yellow font-sans font-black text-xs uppercase tracking-[0.4em] mb-4">Program Pipeline</h2>
+           <h3 className="text-4xl lg:text-6xl font-sans font-black uppercase text-white">The <span className="text-beast-green italic underline">Execution</span> Path</h3>
+        </div>
+        
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-4 min-w-[1000px] lg:min-w-0">
+          {steps.map((step, idx) => (
+            <Fragment key={idx}>
+              <div className="flex flex-col items-center group">
+                <div className="w-16 h-16 rounded-2xl bg-[#1a0b2e] border border-white/10 flex items-center justify-center text-beast-green group-hover:scale-110 group-hover:border-beast-green transition-all duration-300 shadow-lg mb-4">
+                   {step.icon}
+                </div>
+                <span className="text-[10px] font-black uppercase tracking-widest text-center text-gray-400 group-hover:text-white transition-colors">{step.title}</span>
+              </div>
+              {idx < steps.length - 1 && (
+                <div className="hidden lg:block w-full h-px bg-gradient-to-r from-beast-green/50 to-beast-accent-purple/50 opacity-20" />
+              )}
+            </Fragment>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const RealOutcomes = () => {
+  const outcomes = [
+    { title: "4–6 Working AI Tools", desc: "A personal arsenal of functional AI solutions built from scratch." },
+    { title: "Deployed Application", desc: "A live, production-ready application accessible to the world." },
+    { title: "Professional Portfolio", desc: "Verified proof of work that stands out to global enterprises." },
+    { title: "Startup Exposure", desc: "Direct experience in the high-stakes world of AI entrepreneurship." }
+  ];
+
+  return (
+    <section className="py-32 bg-[#0d0516]">
+       <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+             <div>
+                <h2 className="text-beast-accent-purple font-sans font-black text-xs uppercase tracking-[0.4em] mb-4">Tangible Value</h2>
+                <h3 className="text-5xl lg:text-7xl font-sans font-black uppercase text-white mb-8">What You <br /><span className="text-beast-yellow italic">Actually</span> Leave With</h3>
+                <p className="text-xl text-gray-400 font-bold leading-relaxed mb-10">
+                   This isn't just another course. It's a career-defining experience where you exit with a complete ecosystem of AI products and startup experience.
+                </p>
+                <button className="flex items-center gap-4 px-8 py-4 bg-white text-beast-purple font-black text-sm uppercase tracking-widest rounded-full hover:bg-beast-green transition-all group">
+                   Apply for Next Cohort
+                   <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                </button>
+             </div>
+             
+             <div className="grid sm:grid-cols-2 gap-6">
+                {outcomes.map((outcome, idx) => (
+                  <div key={idx} className="p-8 bg-[#1a0b2e] border border-white/5 rounded-[30px] hover:border-beast-yellow transition-all">
+                     <div className="w-12 h-12 bg-beast-yellow/10 rounded-xl flex items-center justify-center text-beast-yellow mb-6">
+                        <Star size={24} />
+                     </div>
+                     <h4 className="text-xl font-black text-white mb-3 uppercase italic leading-tight">{outcome.title}</h4>
+                     <p className="text-sm text-gray-500 font-bold">{outcome.desc}</p>
+                  </div>
+                ))}
+             </div>
+          </div>
+       </div>
     </section>
   );
 };
@@ -280,6 +426,7 @@ const Navbar = () => {
         
         <div className="hidden md:flex items-center gap-10">
           <a href="#hero" className="font-black text-[10px] uppercase tracking-widest hover:text-beast-green transition-colors">Home</a>
+          <a href="#flagship" className="font-black text-[10px] uppercase tracking-widest hover:text-beast-green transition-colors">Flagship</a>
           <a href="#academy" className="font-black text-[10px] uppercase tracking-widest hover:text-beast-green transition-colors">Academy</a>
           <a href="#experience" className="font-black text-[10px] uppercase tracking-widest hover:text-beast-green transition-colors">Experience</a>
           <button className="px-6 py-2 bg-beast-green text-beast-purple font-black text-[10px] uppercase tracking-widest rounded-full hover:scale-105 transition-all">
@@ -296,7 +443,9 @@ export default function App() {
     <div className="min-h-screen bg-beast-purple font-sans selection:bg-beast-green selection:text-beast-purple">
       <Navbar />
       <BusinessCardHero />
-      
+      <FlagshipProgram />
+      <ProgramStructure />
+      <RealOutcomes />
       <Academy />
 
       {/* Experience Summary */}
@@ -308,7 +457,7 @@ export default function App() {
                   <h3 className="text-5xl lg:text-7xl font-sans font-black text-white uppercase italic leading-tight">CIO Level <br /><span className="text-beast-green underline">Execution.</span></h3>
                   <div className="w-24 h-2 bg-beast-accent-purple my-10 rounded-full" />
                   <p className="text-xl text-gray-400 font-bold leading-relaxed mb-10 italic">
-                    "20+ years evolution from the trenches of DevOps to the boardroom. My mandate is simple: Bridge the gap between legacy reality and AI-powered futures."
+                    "20+ years evolution from the trenches of DevOps to the boardroom. As Program Architect & Lead Mentor, I guide the next generation from foundational AI thinking to launching real companies."
                   </p>
                   <div className="grid grid-cols-2 gap-8">
                      <div>
@@ -324,9 +473,9 @@ export default function App() {
 
                <div className="space-y-6">
                   {[
-                    { role: "CIO & Tech Executive", company: "Global Enterprise Transformation", period: "PRESENT" },
-                    { role: "Founder", company: "Beast AI Hero Academy", period: "CURRENT" },
-                    { role: "Transition Leader", company: "Architecting the India ↔ USA Pipeline", period: "2024+" }
+                    { role: "Program Architect & Lead Mentor", company: "Beast AI Hero Academy", period: "PRESENT" },
+                    { role: "CIO & Tech Executive", company: "Global Enterprise Transformation", period: "20+ YEARS" },
+                    { role: "Transition Leader", company: "Architecting the India ↔ USA Pipeline", period: "GLOBAL" }
                   ].map((job, idx) => (
                     <motion.div 
                       key={idx}
