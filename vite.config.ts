@@ -1,3 +1,26 @@
+/*
+LEEWAY HEADER — DO NOT REMOVE
+
+REGION: CONFIG
+TAG: CONFIG.VITE.MAIN
+DESCRIPTION: Vite configuration for the portfolio
+
+5WH:
+WHAT = vite.config.ts
+WHY = Build and dev server configuration
+WHO = Leeway Innovations
+WHERE = vite.config.ts
+WHEN = 2026-05-05
+HOW = Vite + Plugins
+
+AGENTS:
+ASSESS
+ALIGN
+AUDIT
+
+LICENSE: PROPRIETARY
+*/
+
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';

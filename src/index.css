@@ -1,3 +1,26 @@
+/*
+LEEWAY HEADER — DO NOT REMOVE
+
+REGION: UI.STYLING
+TAG: UI.STYLING.INDEX.CSS
+DESCRIPTION: Global styles and theme definitions for the portfolio
+
+5WH:
+WHAT = index.css
+WHY = Defining the visual identity and Tailwind theme
+WHO = Leeway Innovations
+WHERE = src/index.css
+WHEN = 2026-05-05
+HOW = Tailwind CSS + Custom @theme
+
+AGENTS:
+ASSESS
+ALIGN
+AUDIT
+
+LICENSE: PROPRIETARY
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Space+Grotesk:wght@300;400;500;700&display=swap');
 @import "tailwindcss";
 
@@ -9,6 +32,10 @@
   --color-beast-accent-purple: #b146ff;
   --color-beast-green: #72ef21;
   --color-beast-yellow: #facc15;
+  
+  --color-leeway-neon: #39FF14;
+  --color-leeway-fluo: #0DFF94;
+  --color-leeway-pastel: #C7FFD8;
   
   --animate-float: float 3s ease-in-out infinite;
 }
