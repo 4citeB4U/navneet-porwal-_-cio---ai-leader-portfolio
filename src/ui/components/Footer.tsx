@@ -49,8 +49,8 @@ const Footer = () => {
       </div>
 
       {/* LEEWAY WATERMARK - VERY SUBTLE */}
-      <div className="absolute bottom-4 right-8 opacity-[0.03] select-none pointer-events-none">
-        <span className="text-[8px] font-sans font-bold uppercase tracking-[0.5em] text-white">By Leeway Innovations</span>
+      <div className="absolute bottom-4 right-8 opacity-[0.02] select-none pointer-events-none">
+        <span className="text-[7px] font-sans font-bold uppercase tracking-[0.5em] text-white">Powered by Leeway Innovations</span>
       </div>
     </footer>
   );

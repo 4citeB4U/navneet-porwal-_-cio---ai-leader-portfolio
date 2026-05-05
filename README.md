@@ -8,7 +8,6 @@
 
 ---
 
-> **Governed by LeeWay Standards**  
 > **Status:** PROD-READY | BRAND-ALIGNED  
 > **Identity:** CIO | FOUNDER | LEAD MENTOR
 
@@ -76,4 +75,4 @@ This project adheres to the **LeeWay Standards**. Every file is integrated with 
 ---
 
 *“Educate. Innovate. Transform. Empowering the next generation of AI leaders.”*  
-**By Leeway Innovations**
+<sub style="opacity: 0.5;">Powered by Leeway Innovations</sub>
