@@ -32,6 +32,7 @@ import {
   Brain, 
   QrCode 
 } from 'lucide-react';
+import monkImage from '../../assets/monk.png';
 
 const BusinessCardHero = () => {
   return (
@@ -60,7 +61,7 @@ const BusinessCardHero = () => {
                 <div className="relative mb-8 inline-block">
                   <div className="w-32 h-32 lg:w-40 lg:h-40 bg-[#1a0b2e] rounded-full flex items-center justify-center relative overflow-hidden border-4 border-beast-accent-purple shadow-[0_0_20px_rgba(177,70,255,0.4)]">
                     <img 
-                      src={`${import.meta.env.BASE_URL}monk.png`} 
+                      src={monkImage} 
                       alt="Navneet (Monk) Porwal" 
                       className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     />
