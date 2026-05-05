@@ -1,5 +1,13 @@
 # 🦁 Navneet (Monk) Porwal — Portfolio & Beast AI Hero Academy
 
+<div align="center">
+  <img src="public/monk.png" width="200" height="200" style="border-radius: 50%;" alt="Navneet (Monk) Porwal" />
+  <br />
+  <b>CIO | FOUNDER | LEAD MENTOR</b>
+</div>
+
+---
+
 > **Governed by LeeWay Standards**  
 > **Status:** PROD-READY | BRAND-ALIGNED  
 > **Identity:** CIO | FOUNDER | LEAD MENTOR
